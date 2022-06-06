@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Showdata">
+    <LinearLayout
+        android:gravity="center"
+        android:layout_margin="20dp"
+        android:orientation="vertical"
+        android:background="@drawable/bg_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <EditText
+            android:id="@+id/txtid"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:text="Enter Book ID"
+            android:background="@drawable/bg_edit"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:layout_marginBottom="5dp"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/txtbname"
+            android:layout_width="match_parent"
+            android:text="BookName"
+            android:padding="5dp"
+            android:background="@drawable/bg_edit"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:layout_marginBottom="5dp"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/txtprice"
+            android:layout_width="match_parent"
+            android:text="Price"
+            android:padding="5dp"
+            android:background="@drawable/bg_edit"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:layout_marginBottom="5dp"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/txtpage"
+            android:layout_width="match_parent"
+            android:text="Page"
+            android:padding="5dp"
+            android:background="@drawable/bg_edit"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:layout_marginBottom="5dp"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/ok"
+                android:layout_width="match_parent"
+                android:text="OK"
+                android:layout_weight="1"
+                android:layout_margin="15dp"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:id="@+id/cancle"
+                android:layout_width="match_parent"
+                android:text="Cancle"
+                android:layout_weight="1"
+                android:layout_margin="15dp"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
