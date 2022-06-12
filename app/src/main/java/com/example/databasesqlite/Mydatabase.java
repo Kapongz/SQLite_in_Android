@@ -16,8 +16,12 @@ public class Mydatabase extends SQLiteOpenHelper {
             "bname TEXT(50)," +
             "price INTERGER," +
             "page INTERGER);";
-    public Mydatabase(@Nullable Context context) {
-        super(context, dbname, null, dbversion);
+//    public Mydatabase(@Nullable Context context) {
+//        super(context, dbname, null, dbversion);
+//    }
+
+    public Mydatabase(Context context) {
+        super(context,dbname,null,dbversion);
     }
 
     @Override
