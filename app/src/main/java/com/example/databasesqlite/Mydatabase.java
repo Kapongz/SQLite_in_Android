@@ -16,41 +16,70 @@ public class Mydatabase extends SQLiteOpenHelper {
             "bname TEXT(50)," +
             "price INTERGER," +
             "page INTERGER);";
-//    public Mydatabase(@Nullable Context context) {
-//        super(context, dbname, null, dbversion);
-//    }
-
-    public Mydatabase(Context context) {
-        super(context,dbname,null,dbversion);
+    public Mydatabase(@Nullable Context context) {
+        super(context, dbname, null, dbversion);
     }
+
+//    public Mydatabase(Context context) {
+//        super(context,dbname,null,dbversion);
+//    }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(createtable);
 
     }
+
+
     public Cursor SelectData(String bid){
         try {
             SQLiteDatabase db = this.getReadableDatabase();
-            String sql="select * from tbbook where bid="+bid+"";
+            String sql="select * from tbbook where bid='"+bid+"'";
+
             Cursor cur = db.rawQuery(sql,null);
+
             return cur;
 
         }catch (Exception ex){
             return null;
         }
+
     }
     public Cursor SelectAllData(){
         try {
-            SQLiteDatabase db = this.getReadableDatabase();
-            String sql = "select * from tbbook";
-            Cursor cur = db.rawQuery(sql,null);
-            return cur;
-
+            SQLiteDatabase db =this.getReadableDatabase();
+            String sql="Select * from tbbook";
+            Cursor cursor =db.rawQuery(sql,null);
+            return cursor;
         }catch (Exception ex){
             return null;
         }
     }
+
+
+
+//    public Cursor SelectData(String bid){
+//        try {
+//            SQLiteDatabase db = this.getReadableDatabase();
+//            String sql="select * from tbbook where bid="+bid+"";
+//            Cursor cur = db.rawQuery(sql,null);
+//            return cur;
+//
+//        }catch (Exception ex){
+//            return null;
+//        }
+//    }
+//    public Cursor SelectAllData(){
+//        try {
+//            SQLiteDatabase db = this.getReadableDatabase();
+//            String sql = "select * from tbbook";
+//            Cursor cur = db.rawQuery(sql,null);
+//            return cur;
+//
+//        }catch (Exception ex){
+//            return null;
+//        }
+//    }
 
 
     public int DeleteData(String bid){
@@ -69,10 +98,10 @@ public class Mydatabase extends SQLiteOpenHelper {
             return -1;
         }
     }
-    public int UpdateData(String bid, String dbname, String price,String page){
+    public long UpdateData(String bid, String dbname, String price,String page){
         try {
             SQLiteDatabase db = this.getWritableDatabase();
-            String sql = "Update tbbook set bnane=?,price=?,page=? where bid=?";
+            String sql = "Update tbbook set bname=?,price=?,page=? where bid=?";
             SQLiteStatement stm = db.compileStatement(sql);
             stm.bindString(4,bid);
             stm.bindString(1,dbname);
@@ -87,6 +116,28 @@ public class Mydatabase extends SQLiteOpenHelper {
             return -1;
         }
     }
+
+    public long EditData(String bid,String dbname,String price,String page){
+        try {
+            SQLiteDatabase db =this.getWritableDatabase();
+            String sql="Update tbbook set bname=?,price=?,page=? where bid=?";
+            SQLiteStatement stm = db.compileStatement(sql);
+            stm.bindString(1,dbname);
+            stm.bindString(2,price);
+            stm.bindString(3,page);
+            stm.bindString(4,bid);
+
+            long r= stm.executeUpdateDelete();
+            db.close();
+            return r;
+
+
+        }catch (Exception ex){
+            return -1;
+        }
+
+    }
+
 
 
 

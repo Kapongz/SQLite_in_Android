@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+
 import com.example.databasesqlite.Manager_data;
 import com.example.databasesqlite.Mydatabase;
 import com.example.databasesqlite.R;
@@ -50,15 +51,17 @@ public class Showture extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String str=bid.get(position).toString();
-                Intent intent = new Intent(Showture.this, Manager_data.class);
+                String str = bid.get(position).toString();
+                Intent intent = new Intent(Showture.this,Manager_data.class);
                 intent.putExtra("bid",bid.get(position));
-                Showture.this.finish();
+//                Showture.this.finish();
                 startActivity(intent);
 
                 // Toast.makeText(getApplicationContext(), str, Toast.LENGTH_SHORT).show();
             }
         });
+
+
 
 
 

@@ -9,9 +9,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class Showdata extends AppCompatActivity {
-private EditText bookid,bookname,bprice,bpage;
+EditText bookid,bookname,bprice,bpage;
 Button ok,cancle;
-private Mydatabase mydatabase;
+Mydatabase mydatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
