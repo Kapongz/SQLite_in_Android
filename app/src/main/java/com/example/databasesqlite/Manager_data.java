@@ -59,5 +59,18 @@ public class Manager_data extends AppCompatActivity {
         cur.close();
         // Toast.makeText(getApplicationContext(), " "+bid, Toast.LENGTH_SHORT).show();
 
+        // adding on click listener for delete button to delete our course.
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // calling a method to delete our course.
+                mydb.DeleteData(bid);
+                Toast.makeText(getApplicationContext(), "ລົບແລ້ວ", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(Manager_data.this, Showture.class);
+                startActivity(i);
+            }
+        });
+
+
     }
 }

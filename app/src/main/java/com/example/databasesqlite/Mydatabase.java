@@ -17,6 +17,7 @@ public class Mydatabase extends SQLiteOpenHelper {
             "price INTERGER," +
             "page INTERGER);";
     public Mydatabase(@Nullable Context context) {
+
         super(context, dbname, null, dbversion);
     }
 
