@@ -1,14 +1,20 @@
 package com.example.databasesqlite;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.MenuCompat;
+import androidx.core.view.MenuItemCompat;
 
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 
@@ -62,8 +68,38 @@ public class Showture extends AppCompatActivity {
         });
 
 
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu,menu);
 
+        MenuItem searchItem = menu.findItem(R.id.item_search);
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
 
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                ArrayList<String> userslist = new ArrayList<>();
+
+                for (String user : bname){
+                    if(user.toLowerCase().contains(s.toLowerCase())){
+                        userslist.add(user);
+                    }
+
+                }
+                ArrayAdapter<String> adp = new ArrayAdapter<String>(Showture.this,android.R.layout.simple_dropdown_item_1line,userslist);
+                listView.setAdapter(adp);
+                return false;
+            }
+        });
+
+        return super.onCreateOptionsMenu(menu);
     }
 }
