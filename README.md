@@ -1,1 +1,1 @@
-# SQLite_in_Android_
+# SQLite_in_Android_Studio
