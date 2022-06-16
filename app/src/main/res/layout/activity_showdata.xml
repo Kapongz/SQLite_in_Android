@@ -5,13 +5,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/bg_all"
     android:layout_height="match_parent"
     tools:context=".Showdata">
     <LinearLayout
 
         android:layout_margin="20dp"
         android:orientation="vertical"
-        android:background="@drawable/bg_layout"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

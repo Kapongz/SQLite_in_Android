@@ -6,7 +6,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_all"
     tools:context=".Manager_data">
+    <TextView
+        android:layout_width="match_parent"
+        android:text="ອັບເດດຂໍ້ມູນ ແລະ ລົບຂໍ້ມູນ"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:background="@drawable/bg_layout"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:height="5dp"/>
     <LinearLayout
         android:layout_margin="20dp"
         android:orientation="vertical"
@@ -17,21 +33,25 @@
 
             android:id="@+id/txtmagID"
             android:hint="Enter ID"
+            android:textColor="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <EditText
             android:id="@+id/txtmagname"
             android:hint="Enter name"
+            android:textColor="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <EditText
             android:id="@+id/txtmagprice"
             android:hint="Enter price"
+            android:textColor="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <EditText
             android:id="@+id/txtnagpage"
             android:hint="Enter Page"
+            android:textColor="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <LinearLayout
@@ -39,20 +59,27 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnedit"
                 android:textAllCaps="false"
                 android:layout_marginRight="5dp"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="Edit"
+                android:textColor="@color/white"
+                android:text="ອັບເດດ"
+                android:textSize="20dp"
+                android:background="@drawable/btn_update"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btndelete"
                 android:textAllCaps="false"
                 android:layout_weight="1"
-                android:text="Delete"
+                android:text="ລົບ"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:background="@drawable/bg_delete"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
