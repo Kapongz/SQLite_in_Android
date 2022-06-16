@@ -57,6 +57,10 @@ Mydatabase mydatabase;
                 }
                 catch(Exception e) {
                     //  Block of code to handle errors
+                    new SweetAlertDialog(Showdata.this, SweetAlertDialog.ERROR_TYPE)
+                            .setTitleText("Oops...")
+                            .setContentText("ບໍ່ສາມາດບັກທຶກຂໍ້ມູນໄດ້!")
+                            .show();
                 }
 
 //                Toast toast = Toast.makeText(getApplicationContext(), "ບັນທຶກສຳເລັດແລ້ວ", Toast.LENGTH_LONG);
