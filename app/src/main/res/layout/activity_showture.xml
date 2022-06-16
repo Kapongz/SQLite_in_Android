@@ -7,25 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Showture">
-<!--    <LinearLayout-->
-<!--        android:orientation="vertical"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:layout_height="70dp">-->
-<!--        <TextView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:text="ລາຍການ"-->
-<!--            android:textSize="25dp"-->
-<!--            android:gravity="center"-->
-<!--            android:layout_height="wrap_content"/>-->
-<!--     <SearchView-->
-<!--         android:layout_width="match_parent"-->
-<!--         android:id="@+id/search"-->
 
-<!--         android:layout_height="match_parent"/>-->
-
-
-<!--    </LinearLayout>-->
     <LinearLayout
         android:layout_margin="20dp"
         android:orientation="vertical"
@@ -35,8 +17,7 @@
             android:id="@+id/lstv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-
+            android:fontFamily="@font/notolaos"
             android:divider="#f00"
             android:dividerHeight="1dp"/>
 
