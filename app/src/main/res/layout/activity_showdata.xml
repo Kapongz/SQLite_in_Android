@@ -92,18 +92,24 @@
             android:layout_width="match_parent"
             android:orientation="horizontal"
             android:layout_height="wrap_content">
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/ok"
                 android:layout_width="match_parent"
-                android:text="OK"
+                android:text="ບັນທຶກ"
+                android:textColor="@color/white"
+                android:textSize="15dp"
                 android:layout_weight="1"
                 android:backgroundTint="#00897B"
                 android:layout_margin="15dp"
+                android:background="@drawable/bg_btnsave"
                 android:layout_height="wrap_content"/>
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/cancle"
                 android:layout_width="match_parent"
-                android:text="Cancle"
+                android:text="ຍົກເລີກ"
+                android:textSize="15dp"
+                android:textColor="@color/white"
+                android:background="@drawable/bg_delete"
                 android:layout_weight="1"
                 android:backgroundTint="#E53935"
                 android:layout_margin="15dp"

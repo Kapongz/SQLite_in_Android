@@ -1,8 +1,10 @@
 package com.example.databasesqlite;
 
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -34,7 +36,7 @@ public class Manager_data extends AppCompatActivity {
                         txtmagprice.getText().toString(),
                         txtmagpage.getText().toString()) ;
                 if(r==1){
-                    Toast.makeText(getApplicationContext(), "EDit Data Complete", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "ອັບເດດສຳເລັດແລ້ວ", Toast.LENGTH_SHORT).show();
                     Intent intent =new Intent(Manager_data.this,Showture.class);
                     Manager_data.this.finish();
                     startActivity(intent);
@@ -60,16 +62,51 @@ public class Manager_data extends AppCompatActivity {
         // Toast.makeText(getApplicationContext(), " "+bid, Toast.LENGTH_SHORT).show();
 
         // adding on click listener for delete button to delete our course.
-        btnDelete.setOnClickListener(new View.OnClickListener() {
+
+//        btnDelete.setOnClickListener(new View.OnClickListener() {
+////            @Override
+////            public void onClick(View v) {
+////                // calling a method to delete our course.
+////                mydb.DeleteData(bid);
+////                Toast.makeText(getApplicationContext(), "ລົບແລ້ວ", Toast.LENGTH_SHORT).show();
+////                Intent i = new Intent(Manager_data.this, Showture.class);
+////                startActivity(i);
+////            }
+////        });
+
+                btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // calling a method to delete our course.
-                mydb.DeleteData(bid);
-                Toast.makeText(getApplicationContext(), "ລົບແລ້ວ", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(Manager_data.this, Showture.class);
-                startActivity(i);
+                AlertDialog.Builder builder = new AlertDialog.Builder(Manager_data.this);
+                builder.setMessage("ຕ້ອງການລົບລາຍການນີ້ແທ້ບໍ່?");
+                builder.setTitle("ລົບລາຍການ !");
+                builder.setCancelable(false);
+                builder.setPositiveButton("ຕົກລົງ", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int a) {
+
+                        mydb.DeleteData(bid);
+                        Toast.makeText(getApplicationContext(), "ລົບແລ້ວ", Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(Manager_data.this, Showture.class);
+                        startActivity(i);
+                        finish();
+                    }
+                });
+
+                builder.setNegativeButton("ຍົກເລີກ", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+
             }
         });
+
 
 
     }

@@ -60,7 +60,7 @@ public class Showture extends AppCompatActivity {
                 String str = bid.get(position).toString();
                 Intent intent = new Intent(Showture.this,Manager_data.class);
                 intent.putExtra("bid",bid.get(position));
-//                Showture.this.finish();
+                Showture.this.finish();
                 startActivity(intent);
 
                 // Toast.makeText(getApplicationContext(), str, Toast.LENGTH_SHORT).show();
