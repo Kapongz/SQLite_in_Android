@@ -54,6 +54,8 @@ public class Showture extends AppCompatActivity {
         cursor.close();
         adpt =new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,bname);
         listView.setAdapter(adpt);
+        listView.setEmptyView(findViewById(R.id.emptyView));
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

@@ -20,6 +20,17 @@
             android:fontFamily="@font/notolaos"
             android:divider="#f00"
             android:dividerHeight="1dp"/>
+        <TextView
+            android:id="@+id/emptyView"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="ບໍ່ມີຂໍ້ມູນ.!"
+            android:textSize="45dp"
+
+            android:fontFamily="@font/notolaos"
+            android:textStyle="italic"
+            android:textColor="#1C1A1A"/>
 
     </LinearLayout>
 
